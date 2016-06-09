@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>装B神器</title>
+    <link href="resource/frozen.css" rel="stylesheet">
+    <link href="resource/prod.css" rel="stylesheet">
+
+</head>
+<body>
+<header class="ui-header ui-header-positive ui-border-b">
+    <h1>高考准考证生成器</h1>
+</header>
+<div class="ui-container container body-content" style="padding-bottom: 55px;">
+    <section style="padding-bottom: 55px;">
+        <div style="padding: 10px; width: calc(100% - 20px)">
+            <img id="mainImage" class="main-image" src="resource/zb104gaokaozkz_icon.jpg">
+        </div>
+        <div class="ui-form ui-border-t">
+            <form id="card-f" action="./product.php" enctype="multipart/form-data"
+                  method="POST">
+
+
+                <div class="ui-form-item ui-border-b">
+                    <label>姓名</label>
+                    <input type="text" name="name" maxlength="10" required="required" placeholder="输入姓名">
+                </div>
+                <div class="ui-form-item ui-border-b">
+                    <label>学校</label>
+                    <div class="ui-select">
+                    <select class="browser-default" name="xuexiao" id="xuexiao">
+                        <option selected disabled value="">请选择学校</option>
+                        <optgroup label="惠城区（15）">
+                            <option value="惠州市第一中学">惠州市第一中学</option>
+                            <option value="惠州市第三中学">惠州市第三中学</option>
+                            <option value="惠州市第四中学">惠州市第四中学</option>
+                            <option value="惠州市第八中学">惠州市第八中学</option>
+                            <option value="惠州市东江高级中学">惠州市东江高级中学</option>
+                            <option value="惠州市华罗庚中学">惠州市华罗庚中学</option>
+                            <option value="惠州市惠港中学">惠州市惠港中学</option>
+                            <option value="惠州市凌田中学">惠州市凌田中学</option>
+                            <option value="惠州市实验中学">惠州市实验中学</option>
+                            <option value="惠州市田家炳中学">惠州市田家炳中学</option>
+                            <option value="惠州市小金口中学">惠州市小金口中学</option>
+                            <option value="黄冈中学惠州学校">黄冈中学惠州学校</option>
+                            <option value="惠州光正实验学校">惠州光正实验学校</option>
+                            <option value="惠州综合高级中学">惠州综合高级中学</option>
+                            <option value="惠州一中实验学校">惠州一中实验学校</option>
+                        </optgroup>
+                        <optgroup label="惠阳区（5）">
+                            <option value="惠阳崇雅中学">惠阳崇雅中学</option>
+                            <option value="惠阳一中实验学校">惠阳一中实验学校</option>
+                            <option value="惠阳中山中学">惠阳中山中学</option>
+                            <option value="惠阳高级中学">惠阳高级中学</option>
+                            <option value="华师附属惠阳学校">华师附属惠阳学校</option>
+                        </optgroup>
+                        <optgroup label="惠东县（4）">
+                            <option value="惠东县高级中学">惠东县高级中学</option>
+                            <option value="惠东县惠东中学">惠东县惠东中学</option>
+                            <option value="惠东县平山中学">惠东县平山中学</option>
+                            <option value="惠东县荣超中学">惠东县荣超中学</option>
+                        </optgroup>
+                        <optgroup label="龙门县（3）">
+                            <option value="龙门县高级中学">龙门县高级中学</option>
+                            <option value="龙门县龙门中学">龙门县龙门中学</option>
+                            <option value="龙门县永汉中学">龙门县永汉中学</option>
+                        </optgroup>
+                        <optgroup label="博罗县（6）">
+                            <option value="博罗县博师高级中学">博罗县博师高级中学</option>
+                            <option value="博罗县高级中学">博罗县高级中学</option>
+                            <option value="博罗县华侨中学">博罗县华侨中学</option>
+                            <option value="博罗县三乡中学">博罗县三乡中学</option>
+                            <option value="博罗县石湾中学">博罗县石湾中学</option>
+                            <option value="博罗县杨侨中学">博罗县杨侨中学</option>
+                        </optgroup>
+                        <optgroup label="开发区（2）">
+                            <option value="惠州市仲恺中学">惠州市仲恺中学</option>
+                            <option value="大亚湾第一中学">大亚湾第一中学</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </div>
+                <div class="ui-form-item ui-border-b">
+                    <label>科目</label>
+                    <div class="ui-select">
+                        <select name="kemu">
+                            <option value="文科">文科</option>
+                            <option value="理科">理科</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-form-item ui-border-b">
+                    <label>性别</label>
+                    <div class="ui-select">
+                        <select name="sex">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-btn-wrap">
+                    <!--onclick="return confirmSubmit()"-->
+                    <button id="btn_confirm" class="ui-btn-lg ui-btn-primary">确定</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<script>
+    function confirmSubmit() {
+        show();
+        return false;
+    }
+    var oBtn = document.getElementById('btn_confirm'),
+    	oInput = document.getElementsByTagName('input'),
+    	oSelect = document.getElementsByTagName('select');
+    oBtn.onclick = function(e){
+    	for (var i = 0; i < oInput.length; i++) {
+    		if(oInput[i].value==""){
+    			alert("出错了！有一项未填写哟");
+    			return false;
+    		}
+    	};
+    	for (var i = 0; i < oSelect.length; i++) {
+    		if(oSelect[i].value==""){
+    			alert("出错了！有一项未填写哟");
+    			return false;
+    		}
+    	};
+    	document.getElementById('card-f').submit;
+    }
+</script>
+
+<!--<footer class="footer-more">
+    <ul class="ui-tiled">
+        <li>
+            <a href="javascript:void(0)" onclick="show()">更多装B功能</a>
+        </li>
+
+    </ul>
+</footer>-->
+<div id="follow" class="follow" style="display: none;">
+    <span class="close" onclick="hide()">×</span>
+    <p>长按下方图片识别二维码</p>
+    <p>关注后即可使用</p>
+    <img src="resource/saved_resource">
+</div>
+<script type="text/javascript">
+    function show() {
+        document.getElementById("follow").style.display = "block";
+    }
+    function hide() {
+        document.getElementById("follow").style.display = "none";
+    }
+</script>
+
+<script src="resource/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    wx.config({
+        debug: false,
+        appId: 'wxcad1973a1525c80e',
+        timestamp: '1465245778',
+        nonceStr: 'Wm3WZYTPz0wzccnW',
+        signature: '37d7999be3eb7097c9a8145af327828a521743d7',
+        jsApiList: [
+            'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone', 'getNetworkType'
+        ]
+    });
+    wx.ready(function () {
+        var shareTitleInMoments = '【高考准考证生成器】要高考啦真是好紧张啊';
+        var title = '高考准考证生成器';
+        var desc = '要高考啦真是好紧张啊';
+
+        var link = 'http://zb.zhuangbizushou.com/zb104gaokaozkz/';
+
+        var imgUrl = 'http://q.weixinmongo.com/zb104gaokaozkz_icon.jpg';
+        // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareTimeline({
+            title: shareTitleInMoments, // 分享标题
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareAppMessage({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            type: 'link', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+
+        // 获取“分享到QQ”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareQQ({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        // 获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareWeibo({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+
+        // 获取“分享到QQ空间”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareQZone({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    });
+</script>
+
+<script src="resource/z_stat.js" language="JavaScript"></script>
+<script src="resource/core.js" charset="utf-8" type="text/javascript"></script>
+
+
+</body>
+</html>
